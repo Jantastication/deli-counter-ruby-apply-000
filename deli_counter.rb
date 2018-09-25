@@ -13,7 +13,7 @@ def line(katz_deli)
   end
 end
 
-number_array = (0..99).to_a
+number_array = (1..99).to_a
 
 
 def take_a_number(katz_deli, number)
