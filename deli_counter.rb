@@ -6,27 +6,31 @@ def line(katz_deli)
   if katz_deli.length == 0
   puts "The line is currently empty."
   else
-    counter = 0
-  katz_deli.each_with_index do |name, counter|
-    katz_deli_line << "#{counter += 1}. #{name}"
-    counter += 1
-  end
+    katz_deli.each_with_index do |name, index|
+      katz_deli_line << "#{index + 1}. #{name}"
+    end
   puts "The line is currently: #{katz_deli_line.join(" ")}"
   end
 end
 
+number_array = (0..99).to_a
 
-def take_a_number(katz_deli, name)
-  katz_deli << (name)
-  puts "Welcome, #{name}. You are number #{katz_deli.length} in line."
+
+def take_a_number(katz_deli, number)
+  katz_deli << (number)
+  puts "You are number #{katz_deli[-1]}."
 end
+
+take_a_number(katz_deli, number_array.shift)
+take_a_number(katz_deli, number_array.shift)
+take_a_number(katz_deli, number_array.shift)
+take_a_number(katz_deli, number_array.shift)
 
 
 def now_serving(customer)
   if customer.length == 0
-  puts "There is nobody waiting to be served!"
+    puts "There is nobody waiting to be served!"
   else
-  puts "Currently serving #{customer.first}."
-   customer.shift
+    puts "Currently serving #{customer.shift}."
   end
 end
